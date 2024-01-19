@@ -45,12 +45,17 @@ import { createRoot } from 'react-dom/client';
 
 import MyButton from "./myButton"
 
+import Sidebar from "./components/sidebar"
+
 let App = function MyApp() {
     return (
-        <div>
-            <h1>Welcome to my app</h1>
-            <MyButton />
-        </div>
+        <main className="flex">
+            <Sidebar className="flex-none"></Sidebar>
+            <div class="grow m-10">
+                <h1>Welcome to my app</h1>
+                <MyButton />
+            </div>
+        </main>
     );
 }
 
