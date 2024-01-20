@@ -3,3 +3,7 @@
 @import "tailwindcss/utilities";
 
 /* This file is for your main application CSS */
+
+.active {
+    @apply bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800
+}

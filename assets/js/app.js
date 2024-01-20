@@ -40,10 +40,13 @@ liveSocket.connect()
 window.liveSocket = liveSocket
 
 import React, { StrictMode } from 'react';
-import ReactDOM from 'react-dom';
 import { createRoot } from 'react-dom/client';
+import { HashRouter, Route, Routes } from "react-router-dom"
 
 import MyButton from "./myButton"
+import Analytics from "./pages/analytics"
+import Settings from "./pages/settings"
+import Users from "./pages/users"
 
 import Sidebar from "./components/sidebar"
 
@@ -51,8 +54,14 @@ let App = function MyApp() {
     return (
         <main className="flex">
             <Sidebar className="flex-none"></Sidebar>
+
             <div class="grow m-10">
-                <h1>Welcome to my app</h1>
+                <Routes>
+                    <Route path="/" element={<Analytics />} />
+                    <Route path="/analytics" element={<Analytics />} />
+                    <Route path="/settings" element={<Settings />} />
+                    <Route path="/users" element={<Users />} />
+                </Routes>
                 <MyButton />
             </div>
         </main>
@@ -63,6 +72,8 @@ const root = createRoot(document.getElementById('root'));
 
 root.render(
     <StrictMode>
-        <App />
+        <HashRouter>
+            <App />
+        </HashRouter>
     </StrictMode>
 );

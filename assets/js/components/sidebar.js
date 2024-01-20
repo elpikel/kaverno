@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import { ChevronFirst, ChevronLast } from "lucide-react"
 import SidebarItem from "./sidebarItem"
 
 export default function Sidebar() {
@@ -18,14 +17,15 @@ export default function Sidebar() {
                         className={`overflow-hidden transition-all ${expanded ? "w-8" : "hidden"}`}>
                     </img>
                     <span class={`flex-1 text-lg font-semibold text-indigo-600 ml-5 ${expanded ? "" : "hidden"}`}>Kaverno</span>
-                    <button onClick={toggle} className="p-1.5 rounded-lg hover:bg-gray-50">
-                        {expanded ? <ChevronFirst /> : <ChevronLast />}
+                    <button onClick={toggle} className="p-1.5 rounded-lg hover:bg-indigo-50">
+                        {expanded ? <span className="hero-chevron-left w-6"></span> : <span className="hero-chevron-right w-6"></span>}
                     </button>
                 </div>
 
                 <ul className="flex-1 px-3">
-                    <SidebarItem icon="hero-chart-bar" text="Statistics" isActive={false} isExpanded={expanded} />
-                    <SidebarItem icon="hero-cog" text="Settings" isActive={true} isExpanded={expanded} />
+                    <SidebarItem icon="hero-chart-bar" to="/analytics" text="Analytics" isExpanded={expanded} />
+                    <SidebarItem icon="hero-cog" to="/settings" text="Settings" isExpanded={expanded} />
+                    <SidebarItem icon="hero-users" to="/users" text="Users" isExpanded={expanded} />
                 </ul>
 
                 <div className="border-t flex p-3">
