@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from '@radix-ui/themes';
 
 export default function MyButton() {
     const [data, setData] = useState(null);
@@ -26,13 +27,13 @@ export default function MyButton() {
     else {
         return (
             <>
-                <button onClick={handleClick} type="button" className='phx-submit-loading:opacity-75 rounded-lg bg-zinc-900 hover:bg-zinc-700 py-2 px-3 text-sm font-semibold leading-6 text-white active:text-white/80'>
+                <Button onClick={handleClick} size="3" variant="soft">
                     {loading ? "fetching..." : "Fetch users"}
-                </button>
+                </Button>
                 {data != null ? <div>
                     <ul>
                         {data.map(user => {
-                            return <li>{user.name}</li>
+                            return <li key={user.id}>{user.name}</li>
                         })}
                     </ul>
                 </div> : null}

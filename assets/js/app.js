@@ -40,6 +40,8 @@ liveSocket.connect()
 // >> liveSocket.disableLatencySim()
 window.liveSocket = liveSocket
 
+import { Theme } from '@radix-ui/themes';
+
 import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { HashRouter, Route, Routes } from "react-router-dom"
@@ -53,18 +55,20 @@ import Sidebar from "./components/sidebar"
 
 let App = function MyApp() {
     return (
-        <main className="flex">
-            <Sidebar className="flex-none"></Sidebar>
-            <div className="grow m-10">
-                <Routes>
-                    <Route path="/" element={<Analytics />} />
-                    <Route path="/analytics" element={<Analytics />} />
-                    <Route path="/settings" element={<Settings />} />
-                    <Route path="/users" element={<Users />} />
-                </Routes>
-                <MyButton />
-            </div>
-        </main>
+        <Theme>
+            <main className="flex">
+                <Sidebar className="flex-none"></Sidebar>
+                <div className="grow m-10">
+                    <Routes>
+                        <Route path="/" element={<Analytics />} />
+                        <Route path="/analytics" element={<Analytics />} />
+                        <Route path="/settings" element={<Settings />} />
+                        <Route path="/users" element={<Users />} />
+                    </Routes>
+                    <MyButton />
+                </div>
+            </main>
+        </Theme>
     );
 }
 
