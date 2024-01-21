@@ -13,7 +13,7 @@ export default function Sidebar() {
             <nav className={`h-full flex flex-col bg-white border-r shadow-sm ${expanded ? "" : "w-16"}`}>
                 <div className="p-4 pb-2 flex items-center">
                     <img src="/images/logo.svg" className={expanded ? "w-8" : "hidden"}></img>
-                    <span class={`flex-1 text-lg font-semibold text-indigo-600 ml-5 ${expanded ? "" : "hidden"}`}>Kaverno</span>
+                    <span className={`flex-1 text-lg font-semibold text-indigo-600 ml-5 ${expanded ? "" : "hidden"}`}>Kaverno</span>
                     <button onClick={toggle} className="p-1.5 rounded-lg hover:bg-indigo-50">
                         {expanded ? <span className="hero-chevron-left w-6 h-6"></span> : <span className="hero-chevron-right w-6 h-6"></span>}
                     </button>
