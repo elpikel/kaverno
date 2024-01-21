@@ -46,7 +46,6 @@ import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { HashRouter, Route, Routes } from "react-router-dom"
 
-import MyButton from "./myButton"
 import Analytics from "./pages/analytics"
 import Settings from "./pages/settings"
 import Users from "./pages/users"
@@ -65,7 +64,6 @@ let App = function MyApp() {
                         <Route path="/settings" element={<Settings />} />
                         <Route path="/users" element={<Users />} />
                     </Routes>
-                    <MyButton />
                 </div>
             </main>
         </Theme>
